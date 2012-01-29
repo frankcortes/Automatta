@@ -1,4 +1,4 @@
-var myAutomaton = require('../automatta').createAutomata();
+var myAutomaton = require('../../lib/automatta/automatta').createAutomata();
 
 
 myAutomaton.addStatus("init",function(){console.log("init!" + x);},function(){if(x%2 == 0) return "middle";});
