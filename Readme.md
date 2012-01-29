@@ -65,7 +65,7 @@ The output will be:
 
 (The MIT License)
 
-Copyright (c) 2012 Francisco Cort&eacute;s &lt;franklyn.bdn@gmail.com>&gt;
+Copyright (c) 2012 Francisco Cort&eacute;s &lt;franklyn.bdn@gmail.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
