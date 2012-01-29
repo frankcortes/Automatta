@@ -6,6 +6,14 @@ body {
 	font-size:12px;
 }
 
+b {
+	color:SeaGreen;
+}
+
+.pre {
+	width:700px;
+}
+
 #logo{
 	margin-left:350px;
 	margin-bottom:30px;

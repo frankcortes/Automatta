@@ -2,6 +2,8 @@
 <head>
 <title>Automatta, a powerful and lightweight library to create, execute and monitor automata in NodeJS and Javascript</title>
 <link rel="StyleSheet" href="css/index.css" type="text/css" media="screen" />
+<script src="js/jquery.js" type="text/javascript" ></script>
+<script src="js/menu.js" type="text/javascript" ></script>
 </head>
 <body>
 <a href="https://github.com/frankcortes/Automatta"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub"></a>
@@ -12,9 +14,9 @@
 	<div id='menu'>
 	<ul>
 		<li id='howtoinstall'> How to install </li>
-		<li id='quickinstall'> Quick install </li>
+		<li id='quickinstall'> Quick start </li>
 		<li id='creatingcomplex'> Creating a more complex Automata </li>
-		<li>
+		<li id='documentation'>
 			Documentation
 			<ul>
 				<li id='createautomata'>CreateAutomata()</li>
@@ -32,7 +34,139 @@
 	</ul>
 	</div>
 	<div id='container'>
-		asbdjkabfjkvsafaskjlfbjksabfafbsfbashfsbval
+		<div id='howtoinstall_div' style='width:700px;'>
+			<h2> How to Install </h2>
+			In <b>nodeJS</b>:<br />
+			<pre style='color:#000020;background:#f6f8ff;width:700px;'>npm <span style='color:#200080; font-weight:bold; '>install</span> automatta</pre><br />
+			In <b>javascript</b>:<br /><br />
+			Load the file lib/automatta/automatta.js usually:<br />
+			<pre style='color:#000020;background:#f6f8ff;width:700px;'><span style='color:#0057a6; '>&lt;</span><span style='color:#200080; font-weight:bold; '>script type='text/javascript' src='automatta/lib/auttomatta/automatta/automatta.js'</span><span style='color:#0057a6; '>></span><span style='color:#0057a6; '>&lt;/</span><span style='color:#200080; font-weight:bold; '>script</span><span style='color:#0057a6; '>></span></pre><br />
+		</div>
+		<div id='quickinstall_div' style='width:700px;'>
+			<h2>Quick start</h2>
+			Create an Automata is very simple and easy. We have to define states (name, definition and condicions to arrive to other states), and init & final states. A dump example (in nodeJS):<br />
+<pre style='color:#000020;background:#f6f8ff;'><span style='color:#200080; font-weight:bold; '>var</span> myAutomaton <span style='color:#308080; '>=</span> require<span style='color:#308080; '>(</span><span style='color:#1060b6; '>'automatta'</span><span style='color:#308080; '>)</span><span style='color:#308080; '>.</span>createAutomata<span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#406080; '>;</span>
+myAutomaton<span style='color:#308080; '>.</span>addStatus<span style='color:#308080; '>(</span><span style='color:#800000; '>"</span><span style='color:#1060b6; '>init</span><span style='color:#800000; '>"</span><span style='color:#308080; '>,</span><span style='color:#200080; font-weight:bold; '>function</span><span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#406080; '>{</span>console<span style='color:#308080; '>.</span><span style='color:#200080; font-weight:bold; '>log</span><span style='color:#308080; '>(</span><span style='color:#800000; '>"</span><span style='color:#1060b6; '>init!</span><span style='color:#800000; '>"</span> <span style='color:#308080; '>+</span> x<span style='color:#308080; '>)</span><span style='color:#406080; '>;</span><span style='color:#406080; '>}</span><span style='color:#308080; '>,</span><span style='color:#200080; font-weight:bold; '>function</span><span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#406080; '>{</span><span style='color:#200080; font-weight:bold; '>if</span><span style='color:#308080; '>(</span>x<span style='color:#308080; '>%</span><span style='color:#008c00; '>2</span> <span style='color:#308080; '>==</span> <span style='color:#008c00; '>0</span><span style='color:#308080; '>)</span> <span style='color:#200080; font-weight:bold; '>return</span> <span style='color:#800000; '>"</span><span style='color:#1060b6; '>middle</span><span style='color:#800000; '>"</span><span style='color:#406080; '>;</span><span style='color:#406080; '>}</span><span style='color:#308080; '>)</span><span style='color:#406080; '>;</span>
+myAutomaton<span style='color:#308080; '>.</span>addStatus<span style='color:#308080; '>(</span><span style='color:#800000; '>"</span><span style='color:#1060b6; '>middle</span><span style='color:#800000; '>"</span><span style='color:#308080; '>,</span><span style='color:#200080; font-weight:bold; '>function</span><span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#406080; '>{</span>console<span style='color:#308080; '>.</span><span style='color:#200080; font-weight:bold; '>log</span><span style='color:#308080; '>(</span><span style='color:#800000; '>"</span><span style='color:#1060b6; '>middle!</span><span style='color:#800000; '>"</span> <span style='color:#308080; '>+</span> x<span style='color:#308080; '>)</span><span style='color:#406080; '>;</span><span style='color:#406080; '>}</span><span style='color:#308080; '>,</span><span style='color:#200080; font-weight:bold; '>function</span><span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#406080; '>{</span><span style='color:#200080; font-weight:bold; '>if</span> <span style='color:#308080; '>(</span>x <span style='color:#308080; '>==</span> <span style='color:#008c00; '>3</span><span style='color:#308080; '>)</span> <span style='color:#406080; '>{</span><span style='color:#200080; font-weight:bold; '>return</span> <span style='color:#800000; '>"</span><span style='color:#1060b6; '>init</span><span style='color:#800000; '>"</span><span style='color:#406080; '>;</span> <span style='color:#406080; '>}</span> <span style='color:#200080; font-weight:bold; '>else</span> <span style='color:#200080; font-weight:bold; '>if</span><span style='color:#308080; '>(</span>x <span style='color:#308080; '>></span> <span style='color:#008c00; '>4</span><span style='color:#308080; '>)</span> <span style='color:#406080; '>{</span>
+<span style='color:#200080; font-weight:bold; '>return</span> <span style='color:#800000; '>"</span><span style='color:#1060b6; '>final</span><span style='color:#800000; '>"</span><span style='color:#406080; '>;</span> <span style='color:#406080; '>}</span><span style='color:#406080; '>}</span><span style='color:#308080; '>)</span><span style='color:#406080; '>;</span>
+myAutomaton<span style='color:#308080; '>.</span>addStatus<span style='color:#308080; '>(</span><span style='color:#800000; '>"</span><span style='color:#1060b6; '>final</span><span style='color:#800000; '>"</span><span style='color:#308080; '>,</span><span style='color:#200080; font-weight:bold; '>function</span><span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#406080; '>{</span>console<span style='color:#308080; '>.</span><span style='color:#200080; font-weight:bold; '>log</span><span style='color:#308080; '>(</span><span style='color:#800000; '>"</span><span style='color:#1060b6; '>final!</span><span style='color:#800000; '>"</span> <span style='color:#308080; '>+</span> x<span style='color:#308080; '>)</span><span style='color:#406080; '>;</span><span style='color:#406080; '>}</span><span style='color:#308080; '>,</span><span style='color:#200080; font-weight:bold; '>function</span><span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#406080; '>{</span><span style='color:#406080; '>}</span><span style='color:#308080; '>)</span><span style='color:#406080; '>;</span>
+myAutomaton<span style='color:#308080; '>.</span>setInitialStatus<span style='color:#308080; '>(</span><span style='color:#800000; '>"</span><span style='color:#1060b6; '>init</span><span style='color:#800000; '>"</span><span style='color:#308080; '>)</span><span style='color:#406080; '>;</span>
+myAutomaton<span style='color:#308080; '>.</span>setFinalStatus<span style='color:#308080; '>(</span><span style='color:#800000; '>"</span><span style='color:#1060b6; '>final</span><span style='color:#800000; '>"</span><span style='color:#308080; '>)</span><span style='color:#406080; '>;</span>
+</pre><br />
+So, this Automata is defined with the next diagram:	<br/><br/>		
+<pre style='color:#000020;background:#f6f8ff;'><span style='color:#308080; '>+</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>+</span>              <span style='color:#308080; '>+</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>-+</span>            <span style='color:#308080; '>+</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>+</span>
+<span style='color:#308080; '>|</span>            <span style='color:#308080; '>|</span>   <span style='color:#200080; font-weight:bold; '>if</span><span style='color:#308080; '>(</span>x<span style='color:#308080; '>%</span><span style='color:#008c00; '>2</span><span style='color:#308080; '>==</span><span style='color:#008c00; '>0</span><span style='color:#308080; '>)</span> <span style='color:#308080; '>|</span>             <span style='color:#308080; '>|</span> <span style='color:#200080; font-weight:bold; '>if</span><span style='color:#308080; '>(</span>x<span style='color:#308080; '>></span><span style='color:#008c00; '>4</span><span style='color:#308080; '>)</span>    <span style='color:#308080; '>|</span>            <span style='color:#308080; '>|</span>
+<span style='color:#308080; '>|</span>            <span style='color:#308080; '>|</span>              <span style='color:#308080; '>|</span>             <span style='color:#308080; '>|</span>            <span style='color:#308080; '>|</span>            <span style='color:#308080; '>|</span>
+<span style='color:#308080; '>|</span> Init       <span style='color:#308080; '>|</span><span style='color:#308080; '>+</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>></span><span style='color:#308080; '>|</span> Middle      <span style='color:#308080; '>|</span><span style='color:#308080; '>+</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>></span><span style='color:#308080; '>|</span> Final      <span style='color:#308080; '>|</span>
+<span style='color:#308080; '>|</span>            <span style='color:#308080; '>|</span>              <span style='color:#308080; '>|</span>             <span style='color:#308080; '>|</span>            <span style='color:#308080; '>|</span>            <span style='color:#308080; '>|</span>
+<span style='color:#308080; '>|</span>            <span style='color:#308080; '>|</span>              <span style='color:#308080; '>|</span>             <span style='color:#308080; '>|</span>            <span style='color:#308080; '>|</span>            <span style='color:#308080; '>|</span>
+<span style='color:#308080; '>+</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>+</span>              <span style='color:#308080; '>+</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>-+</span>            <span style='color:#308080; '>+</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>+</span>
+       <span style='color:#308080; '>^</span>                            <span style='color:#308080; '>+</span>
+       <span style='color:#308080; '>|</span>                            <span style='color:#308080; '>|</span>
+       <span style='color:#308080; '>|</span>                            <span style='color:#308080; '>|</span>
+       <span style='color:#308080; '>|</span>      <span style='color:#200080; font-weight:bold; '>if</span><span style='color:#308080; '>(</span>x<span style='color:#308080; '>==</span><span style='color:#008c00; '>3</span><span style='color:#308080; '>)</span>              <span style='color:#308080; '>|</span>
+       <span style='color:#308080; '>+</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>+</span>
+</pre><br />
+So, if we execute this:<br />
+<pre style='color:#000020;background:#f6f8ff;'><span style='color:#200080; font-weight:bold; '>for</span><span style='color:#308080; '>(</span><span style='color:#200080; font-weight:bold; '>var</span> x <span style='color:#308080; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#406080; '>;</span> x <span style='color:#308080; '>&lt;</span> <span style='color:#008c00; '>6</span><span style='color:#406080; '>;</span> x<span style='color:#308080; '>++</span><span style='color:#308080; '>)</span><span style='color:#406080; '>{</span>
+    myAutomaton<span style='color:#308080; '>.</span><span style='color:#200080; font-weight:bold; '>exec</span><span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#406080; '>;</span>
+<span style='color:#406080; '>}</span>
+console<span style='color:#308080; '>.</span><span style='color:#200080; font-weight:bold; '>log</span><span style='color:#308080; '>(</span><span style='color:#800000; '>"</span><span style='color:#1060b6; '>trace of this automata: </span><span style='color:#800000; '>"</span> <span style='color:#308080; '>+</span> myAutomaton<span style='color:#308080; '>.</span>getTrace<span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#308080; '>)</span><span style='color:#406080; '>;</span>
+</pre><br />
+The output will be:<br />
+<pre style='color:#000020;background:#f6f8ff;'>middle<span style='color:#308080; '>!</span><span style='color:#008c00; '>0</span>
+middle<span style='color:#308080; '>!</span><span style='color:#008c00; '>1</span>
+middle<span style='color:#308080; '>!</span><span style='color:#008c00; '>2</span>
+init<span style='color:#308080; '>!</span><span style='color:#008c00; '>3</span>
+middle<span style='color:#308080; '>!</span><span style='color:#008c00; '>4</span>
+final<span style='color:#308080; '>!</span><span style='color:#008c00; '>5</span>
+trace of <span style='color:#200080; font-weight:bold; '>this</span> automata<span style='color:#406080; '>:</span> <span style='color:#308080; '>[</span> <span style='color:#1060b6; '>'init'</span><span style='color:#308080; '>,</span> <span style='color:#1060b6; '>'middle'</span><span style='color:#308080; '>,</span> <span style='color:#1060b6; '>'middle'</span><span style='color:#308080; '>,</span> <span style='color:#1060b6; '>'middle'</span><span style='color:#308080; '>,</span> <span style='color:#1060b6; '>'init'</span><span style='color:#308080; '>,</span> <span style='color:#1060b6; '>'middle'</span><span style='color:#308080; '>,</span> <span style='color:#1060b6; '>'final'</span> <span style='color:#308080; '>]</span>
+</pre><br />
+		</div>
+	<div id='documentation_div' style='width:700px;'>
+			<h2>Documentation</h2>
+			<div id='createautomata_div'>
+			<h3>CreateAutomata()</h3>
+			Create an Automata without any definition. It will be necessary to define status, init status and final status.<br />
+<pre style='color:#000020;background:#f6f8ff;'><span style='color:#200080; font-weight:bold; '>var</span> automatta <span style='color:#308080; '>=</span> require<span style='color:#308080; '>(</span><span style='color:#1060b6; '>'automatta'</span><span style='color:#308080; '>)</span><span style='color:#406080; '>;</span>
+<span style='color:#200080; font-weight:bold; '>var</span> myAutomata <span style='color:#308080; '>=</span> automatta<span style='color:#308080; '>.</span>createAutomata<span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#406080; '>;</span>
+</pre>
+			</div>
+			<div id='getcurrentstatus_div'>
+			<h3>getCurrentStatus()</h3>
+			Return the current status of an automata. If it not exists, returns <b>false</b>.<br />
+<pre style='color:#000020;background:#f6f8ff;'><span style='color:#200080; font-weight:bold; '>var</span> automatta <span style='color:#308080; '>=</span> require<span style='color:#308080; '>(</span><span style='color:#1060b6; '>'automatta'</span><span style='color:#308080; '>)</span><span style='color:#406080; '>;</span>
+
+<span style='color:#200080; font-weight:bold; '>var</span> myAutomata <span style='color:#308080; '>=</span> automatta<span style='color:#308080; '>.</span>createAutomata<span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#406080; '>;</span>
+
+myAutomata<span style='color:#308080; '>.</span>addStatus<span style='color:#308080; '>(</span><span style='color:#800000; '>"</span><span style='color:#1060b6; '>hi</span><span style='color:#800000; '>"</span><span style='color:#308080; '>,</span><span style='color:#200080; font-weight:bold; '>function</span><span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#406080; '>{</span>console<span style='color:#308080; '>.</span><span style='color:#200080; font-weight:bold; '>log</span><span style='color:#308080; '>(</span><span style='color:#800000; '>"</span><span style='color:#1060b6; '>hi</span><span style='color:#800000; '>"</span><span style='color:#308080; '>)</span><span style='color:#406080; '>}</span><span style='color:#308080; '>,</span><span style='color:#200080; font-weight:bold; '>function</span><span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#406080; '>{</span><span style='color:#406080; '>}</span><span style='color:#308080; '>)</span><span style='color:#406080; '>;</span>
+
+myAutomata<span style='color:#308080; '>.</span>setInitStatus<span style='color:#308080; '>(</span><span style='color:#800000; '>"</span><span style='color:#1060b6; '>hi</span><span style='color:#800000; '>"</span><span style='color:#308080; '>)</span><span style='color:#406080; '>;</span>
+
+myAutomata<span style='color:#308080; '>.</span>getcurrentStatus<span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#406080; '>;</span> <span style='color:#595979; '>//This should return "hi"</span>
+</pre>
+			</div>
+			<div id='addstatus_div'>
+			<h3>addStatus(name,execution,conditions)</h3>
+			Create a new state for the automata with the name of this state, execution, and conditions. Execution is a function with the set of instruccions that the automata will execute when it will be in this state. Conditions is the filter function that it will decide the next state. Conditions should return the next state's name; Otherwise, the automata will continue in the current status. For instance:
+<pre style='color:#000020;background:#f6f8ff;'><span style='color:#200080; font-weight:bold; '>var</span> automatta <span style='color:#308080; '>=</span> require<span style='color:#308080; '>(</span><span style='color:#1060b6; '>'automatta'</span><span style='color:#308080; '>)</span><span style='color:#406080; '>;</span>
+
+<span style='color:#200080; font-weight:bold; '>var</span> myAutomata <span style='color:#308080; '>=</span> automatta<span style='color:#308080; '>.</span>createAutomata<span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#406080; '>;</span>
+
+myAutomata<span style='color:#308080; '>.</span>addStatus<span style='color:#308080; '>(</span><span style='color:#800000; '>"</span><span style='color:#1060b6; '>hi</span><span style='color:#800000; '>"</span><span style='color:#308080; '>,</span><span style='color:#200080; font-weight:bold; '>function</span><span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#406080; '>{</span>console<span style='color:#308080; '>.</span><span style='color:#200080; font-weight:bold; '>log</span><span style='color:#308080; '>(</span><span style='color:#800000; '>"</span><span style='color:#1060b6; '>hi</span><span style='color:#800000; '>"</span><span style='color:#308080; '>)</span><span style='color:#406080; '>}</span><span style='color:#308080; '>,</span><span style='color:#200080; font-weight:bold; '>function</span><span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#406080; '>{</span> <span style='color:#200080; font-weight:bold; '>if</span><span style='color:#308080; '>(</span>x<span style='color:#308080; '>==</span><span style='color:#008c00; '>1</span><span style='color:#308080; '>)</span><span style='color:#200080; font-weight:bold; '>return</span> <span style='color:#800000; '>"</span><span style='color:#1060b6; '>one</span><span style='color:#800000; '>"</span><span style='color:#406080; '>}</span><span style='color:#308080; '>)</span><span style='color:#406080; '>;</span>
+</pre>
+It's equivalent to:
+<pre style='color:#000020;background:#f6f8ff;'>      <span style='color:#308080; '>+</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>+</span>                   <span style='color:#308080; '>+</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>+</span>
+      <span style='color:#308080; '>|</span>                <span style='color:#308080; '>|</span>    <span style='color:#200080; font-weight:bold; '>if</span><span style='color:#308080; '>(</span>x <span style='color:#308080; '>==</span> <span style='color:#008c00; '>1</span><span style='color:#308080; '>)</span>     <span style='color:#308080; '>|</span>                <span style='color:#308080; '>|</span>
+      <span style='color:#308080; '>|</span>   HI           <span style='color:#308080; '>|</span>                   <span style='color:#308080; '>|</span>   ONE          <span style='color:#308080; '>|</span>
+      <span style='color:#308080; '>|</span>                <span style='color:#308080; '>|</span><span style='color:#308080; '>+</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>-</span><span style='color:#308080; '>></span><span style='color:#308080; '>|</span>                <span style='color:#308080; '>|</span>
+      <span style='color:#308080; '>|</span>                <span style='color:#308080; '>|</span>                   <span style='color:#308080; '>|</span>                <span style='color:#308080; '>|</span>
+      <span style='color:#308080; '>+</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>+</span>                   <span style='color:#308080; '>+</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>--</span><span style='color:#308080; '>+</span>
+</pre>	
+However, it would be needed declare a new state with name "one".		
+			</div>			
+<div id='removestatus_div'>
+	<h3>removeStatus(name)</h3>
+	Remove the state with the specified name.
+</div>
+<div id='setinitialstatus_div'>
+	<h3>setInitialStatus(name)</h3>
+	Set the state with the specified name as the initial status. <b>Attention: if you don't specify the initial status, the automata never will be executed.</b>. A example for its use:<br />
+	<pre style='color:#000020;background:#f6f8ff;'><span style='color:#200080; font-weight:bold; '>var</span> automatta <span style='color:#308080; '>=</span> require<span style='color:#308080; '>(</span><span style='color:#1060b6; '>'automatta'</span><span style='color:#308080; '>)</span><span style='color:#406080; '>;</span>
+
+<span style='color:#200080; font-weight:bold; '>var</span> myAutomata <span style='color:#308080; '>=</span> automatta<span style='color:#308080; '>.</span>createAutomata<span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#406080; '>;</span>
+
+myAutomata<span style='color:#308080; '>.</span>addStatus<span style='color:#308080; '>(</span><span style='color:#800000; '>"</span><span style='color:#1060b6; '>hi</span><span style='color:#800000; '>"</span><span style='color:#308080; '>,</span><span style='color:#200080; font-weight:bold; '>function</span><span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#406080; '>{</span>console<span style='color:#308080; '>.</span><span style='color:#200080; font-weight:bold; '>log</span><span style='color:#308080; '>(</span><span style='color:#800000; '>"</span><span style='color:#1060b6; '>hi</span><span style='color:#800000; '>"</span><span style='color:#308080; '>)</span><span style='color:#406080; '>}</span><span style='color:#308080; '>,</span><span style='color:#200080; font-weight:bold; '>function</span><span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#406080; '>{</span><span style='color:#406080; '>}</span><span style='color:#308080; '>)</span><span style='color:#406080; '>;</span>
+
+myAutomata<span style='color:#308080; '>.</span>setInitStatus<span style='color:#308080; '>(</span><span style='color:#800000; '>"</span><span style='color:#1060b6; '>hi</span><span style='color:#800000; '>"</span><span style='color:#308080; '>)</span><span style='color:#406080; '>;</span>
+
+</pre>
+</div>
+<div id='setfinalstatus_div'>
+	<h3>SetFinalStatus(name)</h3>
+	Matemathically, an automata contains one or more final states, where it decides if an input is accepted or not. You can use final states if you want with this function. Set the state with the specified name as a posible final status.
+</div>
+<div id='removefinalstatus_div'>
+	<h3>removeFinalStatus(name)</h3>
+	Removes the state with the specified name of the final states list.
+</div>
+<div id='exec_div'>
+	<h3>Exec</h3>
+	Executes the automata once. For this, the automata will make the next steps: <br/>
+	- First of all, it detects the currentState (init if the automata never has been executed)<br />
+	- After, the automata executes the function "execution" for the currentState.<br />
+	- Finally, the automata check the conditions for the currentState and changes the currentState for the next (if any).<br />
+	For instance:<br />
+</div>
+<div id='isfinished_div'>
+	<h3>isFinished()</h3>
+	Check if the currentStatus is a final Status. If you want a explation more mathematical, it checks if the input for this automata is accepted or not.
+</div>
+<div id='gettrace_div'>
+	<h3>getTrace()</h3>
+	Returns a string array with all states where the automata had stayed. For instance:
+</div>
+		</div>
 	</div>
 </body>
 </html>
