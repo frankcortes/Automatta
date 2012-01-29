@@ -18,7 +18,7 @@ Load the file lib/automatta/automatta.js usually:
 	
 ## Quick Start
 	
-Create an Automata is very simple and easy. We have to define states (name, definition and condicions to arrive to other states), and  init & final states. A dump example:
+Create an Automata is very simple and easy. We have to define states (name, definition and condicions to arrive to other states), and  init & final states. A dump example (in nodeJS):
    
     var myAutomaton = require('automatta').createAutomata();
     myAutomaton.addStatus("init",function(){console.log("init!" + x);},function(){if(x%2 == 0) return "middle";});
