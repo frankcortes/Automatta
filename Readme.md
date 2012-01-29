@@ -3,7 +3,7 @@
 
  > A powerful and lightweight library to create, execute and monitor automata in NodeJS and Javascript.
 
-[frankcortes.github.com/Automatta](https://frankcortes.github.com/Automatta)
+[frankcortes.github.com/Automatta](frankcortes.github.com/Automatta)
 
 ## Installation
 
