@@ -1,0 +1,30 @@
+<html>
+<head>
+<link rel=StyleSheet href="test.css" type="text/css" media="screen" />
+<script type='text/javascript' src='../../lib/automatta/automatta.js'></script>
+<script type='text/javascript'>
+var main = function(){
+	var myAutomaton = createAutomata();
+	myAutomaton.addStatus("init",function(){document.getElementById('output').innerHTML +="init!" + x + "<br />";},function(){if(x%2 == 0) return "final";});
+	myAutomaton.addStatus("final",function(){document.getElementById('output').innerHTML +="final!" + x + "<br />";},function(){ if(x%2 == 1) return "init";});
+	myAutomaton.setInitialStatus("init");
+	myAutomaton.setFinalStatus("final");
+	
+	for(var x = 0; x < 6; x++){
+		myAutomaton.exec();
+	}
+	document.getElementById('trace').innerHTML =myAutomaton.getTrace();
+
+};
+
+window.onload = main;
+</script>
+<body>
+Output for this Automata:<br />
+<div class='code' id='output'>
+</div>
+Trace for the states of this Automata:<br />
+<div class='code' id='trace'>
+</div>
+</body>
+</html>

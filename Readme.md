@@ -28,13 +28,19 @@ Create an Automata is very simple and easy. We have to define states (name, defi
     myAutomaton.setFinalStatus("final");
 	
 This Automata is defined with the next diagram:
-	
-	|-------|  if(x%2 == 0)   |--------|  if(x > 4)       |-------|
-	| Init  |  =============> | middle | ===============> | Final |
-	|-------|                 |--------|                  |-------|
-	    /\                        ||
-		||========================||
-			 if(x == 3)
+
+    +------------+              +-------------+            +------------+
+    |            |   if(x%2==0) |             | if(x>4)    |            |
+    |            |              |             |            |            |
+    | Init       |+------------>| Middle      |+---------->| Final      |
+    |            |              |             |            |            |
+    |            |              |             |            |            |
+    +------------+              +-------------+            +------------+
+           ^                            +
+           |                            |
+           |                            |
+           |      if(x==3)              |
+           +----------------------------+
 	
 So, if we execute this:
 

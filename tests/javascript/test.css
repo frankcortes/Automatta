@@ -1,0 +1,15 @@
+body {
+	padding:10px;
+	font-family:arial;
+	color:darkSlateGray;
+	font-style:oblique;
+}
+
+.code{
+	font-size:10px;
+	background-color:Gainsboro;
+	padding:10px;
+	border:1px solid silver;
+	width:300px;
+	margin:10px 0;
+}
