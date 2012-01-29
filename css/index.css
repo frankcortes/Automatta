@@ -1,0 +1,63 @@
+body {
+	color:DarkGreen;
+	padding:10px;
+	background-Color:MintCream;
+	font-family:arial;
+	font-size:12px;
+}
+
+#logo{
+	margin-left:350px;
+	margin-bottom:30px;
+	float:left;
+}
+
+#container{
+	margin-left:70px;
+	float:left;
+}
+
+h1 {
+	font-size:35px;
+}
+
+h3 {
+	color:SeaGreen;
+}
+
+#menu {
+	float:left;
+	clear:left;
+	width:280px;
+	background-color:Lavender;
+	border:1px solid Silver;
+}
+
+#menu ul {
+	padding:8px;
+	font-family:monospace;
+	list-style-type:none;
+	font-size:14px;
+}
+
+#menu ul li {
+	color:darkSlateGray;
+	font-weight:bolder;
+	cursor:pointer;
+
+}
+
+#menu ul li:hover{
+	color:DarkRed;
+}
+
+#menu ul li li {
+	font-size:11px;
+	color:green;
+	cursor:pointer;
+}
+
+#menu ul li li:hover{
+	color:FireBrick;
+	font-weight:bolder;
+} 
