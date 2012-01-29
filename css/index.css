@@ -48,24 +48,30 @@ h3 {
 	font-size:14px;
 }
 
-#menu ul li {
+#menu ul li a{
 	color:darkSlateGray;
 	font-weight:bolder;
 	cursor:pointer;
+	text-decoration:none;
 
 }
 
-#menu ul li:hover{
+#menu ul li a:hover{
 	color:DarkRed;
 }
 
-#menu ul li li {
+#menu ul li li a{
 	font-size:11px;
 	color:green;
 	cursor:pointer;
+	text-decoration:none;
 }
 
-#menu ul li li:hover{
+#menu ul li li a:hover{
 	color:FireBrick;
 	font-weight:bolder;
 } 
+
+a {
+	text-decoration:none;
+}
