@@ -3,6 +3,19 @@
 
  > A powerful and lightweight library to create, execute and monitor automata in NodeJS and Javascript.
 
+## Installation
+
+In nodeJS:
+
+    npm install automatta
+
+In javascript:
+
+Load the file lib/automatta/automatta.js usually:
+
+    <script type='text/javascript' src='automatta/lib/auttomatta/automatta/automatta.js'></script>
+ 
+	
 ## Quick Start
 	
 Create an Automata is very simple and easy. We have to define states (name, definition and condicions to arrive to other states), and  init & final states. A dump example:
