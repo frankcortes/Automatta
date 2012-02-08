@@ -12,6 +12,7 @@ var main = function(){
 	
 	for(var x = 0; x < 6; x++){
 		myAutomaton.exec();
+		document.getElementById('trace').innerHTML += "Previous State: " + myAutomaton.getPreviousState() + "<br />";
 	}
 	document.getElementById('trace').innerHTML =myAutomaton.getTrace();
 
