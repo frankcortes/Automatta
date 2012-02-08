@@ -20,18 +20,14 @@ b {
 }
 
 #logo{
-	background-color:MintCream;
-	position:fixed;
 	width:62%;
 	margin-left:350px;
 	margin-bottom:30px;
 	float:left;
-	z-index:1001;
 }
 
 #container{
 	width:62%;
-	margin-top:150px;
 	margin-left:360px;
 	float:left;
 }
@@ -49,6 +45,7 @@ h3 {
 	float:left;
 	clear:left;
 	width:280px;
+	margin-top:200px;
 	background-color:Lavender;
 	border:1px solid Silver;
 }
