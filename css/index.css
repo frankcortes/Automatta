@@ -45,9 +45,9 @@ h3 {
 	float:left;
 	clear:left;
 	width:280px;
-	margin-top:200px;
+	height:100%;
 	background-color:Lavender;
-	border:1px solid Silver;
+	border-right:1px solid Silver;
 }
 
 #menu ul {
